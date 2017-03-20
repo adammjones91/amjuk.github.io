@@ -8,39 +8,49 @@
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
+                margin: 0;
+                background: #000000;
+                background: -moz-radial-gradient(center, ellipse cover, #000000 0%, #051706 95%, #1a5b1e 100%);
+                background: -webkit-radial-gradient(center, ellipse cover, #000000 0%,#051706 95%,#1a5b1e 100%);
+                background: radial-gradient(ellipse at center, #000000 0%,#051706 95%,#1a5b1e 100%);
             }
             .wrap {
                 position: relative;
             }
             svg {
-                fill: #262c33;
+                fill: #1b7b23;
                 stroke-width: 1;
                 width: 30vw;
                 top: 0;
             }
             .base {
-                animation: smallPulse 3.4s ease-in-out;
+                animation: basePulse 6s ease-in-out;
                 animation-iteration-count:infinite;
             }
             .pulse {
                 position: absolute;
                 fill: none;
-                stroke: #ff5722;
-                animation: pulse 3.4s ease-in-out;
+                stroke: #33ff22;
+                animation: pulse 6s ease-in-out;
                 animation-iteration-count:infinite;
             }
             .outer {
                 position: absolute;
                 fill: none;
-                stroke: #ff5722;
-                animation: outerPulse 3.4s ease-in-out;
+                stroke: #34af2a;
+                animation: outerPulse 6s ease-in-out;
                 animation-iteration-count:infinite;
             }
-            @keyframes smallPulse {
+            @keyframes basePulse {
                 0% {
                     transform: scale(1)
                 }
-                50% {
+                8% {
+                    fill: #1d8e27;
+                    transform: scale(1.08)
+                }
+                15% {
+                    fill: #1b7b23;
                     transform: scale(1.04)
                 }
                 100% {
@@ -49,33 +59,46 @@
             }
             @keyframes pulse {
                 0% {
+                    stroke: #2ab41f;
                     opacity: 0;
                     transform: scale(1)
                 }
-                50% {
+                8% {
+                    transform: scale(1.08)
+                }
+                12% {
                     opacity: 1;
                     transform: scale(1.04)
                 }
-                70% {
-                    opacity: 0.8;
+                40% {
+                    stroke: #34af2a;
+                    opacity: 0;
+                    transform: scale(1.4)
                 }
                 100% {
                     opacity: 0;
-                    transform: scale(1.16)
                 }
             }
             @keyframes outerPulse {
                 0% {
+                    stroke: #2ab41f;
                     opacity: 0;
                     transform: scale(1)
                 }
-                50% {
+                8% {
+                    transform: scale(1.08)
+                }
+                12% {
                     opacity: 0.5;
                     transform: scale(1.04)
                 }
+                40% {
+                    stroke: #34af2a;
+                    opacity: 0;
+                    transform: scale(1.8)
+                }
                 100% {
                     opacity: 0;
-                    transform: scale(1.24)
                 }
             }
         </style>
