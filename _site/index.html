@@ -10,14 +10,15 @@
                 height: 100vh;
                 margin: 0;
                 background: #000000;
-                background: -moz-radial-gradient(center, ellipse cover, #000000 0%, #051706 95%, #1a5b1e 100%);
-                background: -webkit-radial-gradient(center, ellipse cover, #000000 0%,#051706 95%,#1a5b1e 100%);
-                background: radial-gradient(ellipse at center, #000000 0%,#051706 95%,#1a5b1e 100%);
+                animation: filterSat 36s linear;
+                animation-iteration-count: infinite;
+                transform: translate3d(0, 0, 0);
             }
             .wrap {
                 position: relative;
             }
             svg {
+                transform: translate3d(0, 0, 0);
                 fill: #1b7b23;
                 stroke-width: 1;
                 width: 30vw;
@@ -41,6 +42,14 @@
                 animation: outerPulse 6s ease-in-out;
                 animation-iteration-count:infinite;
             }
+            @keyframes filterSat {
+                0% {
+                    filter: hue-rotate(0deg);
+                }
+                100% {
+                    filter: hue-rotate(360deg);
+                }
+            }
             @keyframes basePulse {
                 0% {
                     transform: scale(1)
@@ -49,7 +58,7 @@
                     fill: #1d8e27;
                     transform: scale(1.08)
                 }
-                15% {
+                12% {
                     fill: #1b7b23;
                     transform: scale(1.04)
                 }
