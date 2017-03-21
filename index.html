@@ -12,18 +12,18 @@
                 overflow: hidden;
                 margin: 0;
                 background: #000000;
-                animation: filterSat 36s linear;
-                animation-iteration-count: infinite;
-                transform: translate3d(0, 0, 0);
             }
             .wrap {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
                 position: relative;
+                animation: filterSat 36s linear;
+                animation-iteration-count: infinite;
             }
             svg {
-                transform: translate3d(0, 0, 0);
                 fill: #1b7b23;
                 stroke-width: 1;
-                width: 30vw;
+                width: 20vw;
                 top: 0;
             }
             .base {
@@ -56,10 +56,12 @@
             }
             @keyframes basePulse {
                 0% {
+                    -webkit-filter: grayscale(.8);
                     filter: grayscale(.8);
                     transform: scale(1)
                 }
                 8% {
+                    -webkit-filter: grayscale(0);
                     filter: grayscale(0);
                     fill: #1d8e27;
                     transform: scale(1.08)
@@ -69,6 +71,7 @@
                     transform: scale(1.04)
                 }
                 100% {
+                    -webkit-filter: grayscale(.8);
                     filter: grayscale(.8);
                     transform: scale(1)
                 }
