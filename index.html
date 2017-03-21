@@ -56,9 +56,11 @@
             }
             @keyframes basePulse {
                 0% {
+                    filter: grayscale(.8);
                     transform: scale(1)
                 }
                 8% {
+                    filter: grayscale(0);
                     fill: #1d8e27;
                     transform: scale(1.08)
                 }
@@ -67,6 +69,7 @@
                     transform: scale(1.04)
                 }
                 100% {
+                    filter: grayscale(.8);
                     transform: scale(1)
                 }
             }
@@ -111,6 +114,22 @@
                     transform: scale(1.8)
                 }
                 100% {
+                    opacity: 0;
+                }
+            }
+            @keyframes circle {
+                0% {
+                    opacity: .5;
+                background: rgba(213,156,34,.2);
+
+                }
+                40% {
+                    opacity: 1;
+                background: rgba(213,34,160,.2);
+                }
+                100% {
+                    width: 200%;
+                    height: 200%;
                     opacity: 0;
                 }
             }
